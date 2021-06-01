@@ -27,10 +27,10 @@
 				<li><a href="./member/join.html">회원정보수정</a></li>
 				-->
 				<!-- 로그인 전-->
-				<li><a href="./campusmate_main/login.jsp">로그인</a></li>
-				<li><a href="./member/join.html">회원가입</a></li>
+				<li><a href="../campusmate_main/login.jsp">로그인</a></li>
+				<li><a href="../campusmate_main/join.html">회원가입</a></li>
 				<!-- 관리자 로그인시 -->
-				<li><a href="./adm/set.html">관리자</a></li>
+				<li><a href="../adm/set.html">관리자</a></li>
 			</ul>
 		</div>
 	</div>
@@ -43,25 +43,25 @@
 			<li>
 				<a href="#none">캠퍼스 투어</a>
 				<ul class="submenu">
-					<li><a href="./knu_tour.jsp">경북대</a></li>
+					<li><a href="../knu_tour.jsp">경북대</a></li>
 					
-					<li><a href="./yu_tour.jsp">영남대</a></li>
-					<li><a href="./kmu_tour.jsp">계명대</a></li>
+					<li><a href="../yu_tour.jsp">영남대</a></li>
+					<li><a href="../kmu_tour.jsp">계명대</a></li>
 				</ul>
 			</li>
 			<li>
 				<a href="#none">캠퍼스 데이트</a>
 				<ul class="submenu">
-					<li><a href="./campusmate_date/date_intro.jsp">소개</a></li>
-					<li><a href="./campusmate_date/member.jsp">회원 등록</a></li>
-					<li><a href="./campusmate_date/matching.jsp">매칭하기</a></li>
+					<li><a href="../campusmate_date/date_intro.jsp">소개</a></li>
+					<li><a href="../campusmate_date/member.jsp">회원 등록</a></li>
+					<li><a href="../campusmate_date/matching.jsp">매칭하기</a></li>
 				</ul>
 			</li>
 			<li>
 				<a href="#none">캠퍼스 그룹</a>
 				<ul class="submenu">
-					<li><a href="./campusmate_group/club.jsp">동아리</a></li>
-					<li><a href="./campusmate_group/study.jsp">스터디</a></li>
+					<li><a href="../campusmate_group/club.jsp">동아리</a></li>
+					<li><a href="../campusmate_group/study.jsp">스터디</a></li>
 				</ul>
 			</li>
 			<li><a href="#none">캠퍼스 푸드</a>
@@ -94,7 +94,7 @@
 		<h1>Light</h1>
 		<p>휴스타 3기 </p>
 		<p>개발자 : 고수진 김도연 정예성</p>
-		<p>github : https://github.com/YS-Jeong/Campusmate.git</p>
+		<p>github : https://github.com/kosujin8184/Hustar_Campusmate</p>
 		<span>copyright(c) Light. All rights reserved.</span>
 	</div>
 </div>
