@@ -38,7 +38,7 @@
 			
 	</div>
 	<div class ="login-btn">
-		<a href ="./join.html">회원가입</a>
+		<a href ="../join.html">회원가입</a>
 	</div>
 </div>
 

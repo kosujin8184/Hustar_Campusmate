@@ -9,7 +9,14 @@
 <meta charset="UTF-8">
 <title>CampusMate</title>
 <link rel="icon" href="./img/Logo.PNG">
- <link type="text/css" rel="stylesheet" href="<c:url value='./css/style.css'/>"/>
+<link type="text/css" rel="stylesheet" href="<c:url value='./css/style.css'/>"/>
+
+<script src="./js/jquery-1.12.4.min.js"></script>
+<script src="./js/jquery-ui.min.js"></script>
+<script src="./js/swiper.min.js"></script>
+<link rel="stylesheet" href="./js/swiper.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
 
@@ -127,8 +134,8 @@ $('.m-menu a').click(
 	<!-- Swiper -->
 	  <div class="swiper-container">
 		<div class="swiper-wrapper">
-		  <div class="swiper-slide"><img src="./img/t02.jpg"></div>
-		  <div class="swiper-slide"><img src="./img/t06.jpg"></div>
+		  <div class="swiper-slide"><img src="./img/star.jpg"></div>
+		  <div class="swiper-slide"><img src="./img/test_img.jpg"></div>
 		</div>
 		<!-- Add Pagination -->
 	    <div class="swiper-pagination"></div>
@@ -195,7 +202,8 @@ $('.m-menu a').click(
 			<!-- Swiper -->
 			  <div class="swiper-container r-slide">
 				<div class="swiper-wrapper">
-				  <div class="swiper-slide"><img src="./img/right_n03.jpg"></div>
+				  <div class="swiper-slide"><img src="./img/star.jpg"></div>
+				  <div class="swiper-slide"><img src="./img/test_img.jpg"></div>
 				</div>
 				<!-- Add Pagination -->
 				<div class="swiper-pagination"></div>
@@ -238,7 +246,7 @@ $('.m-menu a').click(
 		<h1>Light</h1>
 		<p>휴스타 3기 </p>
 		<p>개발자 : 고수진 김도연 정예성</p>
-		<p>github : https://github.com/YS-Jeong/Campusmate.git</p>
+		<p>github : https://github.com/kosujin8184/Hustar_Campusmate</p>
 		<span>copyright(c) Light. All rights reserved.</span>
 
 	</div>

@@ -192,7 +192,7 @@
 		<h1>Light</h1>
 		<p>휴스타 3기 </p>
 		<p>개발자 : 고수진 김도연 정예성</p>
-		<p>github : https://github.com/YS-Jeong/Campusmate.git</p>
+		<p>github : https://github.com/kosujin8184/Hustar_Campusmate</p>
 		<span>copyright(c) Light. All rights reserved.</span>
 
 	</div>
