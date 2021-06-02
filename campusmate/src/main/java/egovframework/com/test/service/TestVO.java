@@ -3,72 +3,77 @@ package egovframework.com.test.service;
 import egovframework.com.cmm.ComDefaultVO;
 
 public class TestVO extends ComDefaultVO{
-	private String te_id;
-	private String te_name;
-	private String te_content;
-	private String insert_date;
-	private String modify_date;
-	private String te_is_notice;
-	private String te_is_hot;
-	private String te_nick;
-	private String te_ids[];
+	private String join_school_num;
+	private String join_password;
+	private String join_name;
+	private String join_phone;
+	private String join_birth_date;
+	private String join_gender;
+	private String join_school_name;
+	private String join_major_name;
+	private String join_insert_date;
+	private String join_modify_date;
 	
 	
-	
-	public String[] getTe_ids() {
-		return te_ids;
+	public String getJoin_school_num() {
+		return join_school_num;
 	}
-	public void setTe_ids(String[] te_ids) {
-		this.te_ids = te_ids;
+	public void setJoin_school_num(String join_school_num) {
+		this.join_school_num = join_school_num;
 	}
-	public String getTe_is_hot() {
-		return te_is_hot;
+	public String getJoin_password() {
+		return join_password;
 	}
-	public void setTe_is_hot(String te_is_hot) {
-		this.te_is_hot = te_is_hot;
+	public void setJoin_password(String join_password) {
+		this.join_password = join_password;
 	}
-	public String getTe_nick() {
-		return te_nick;
+	public String getJoin_name() {
+		return join_name;
 	}
-	public void setTe_nick(String te_nick) {
-		this.te_nick = te_nick;
+	public void setJoin_name(String join_name) {
+		this.join_name = join_name;
 	}
-	public String getTe_is_notice() {
-		return te_is_notice;
+	public String getJoin_phone() {
+		return join_phone;
 	}
-	public void setTe_is_notice(String te_is_notice) {
-		this.te_is_notice = te_is_notice;
+	public void setJoin_phone(String join_phone) {
+		this.join_phone = join_phone;
 	}
-	public String getTe_id() {
-		return te_id;
+	public String getJoin_birth_date() {
+		return join_birth_date;
 	}
-	public void setTe_id(String te_id) {
-		this.te_id = te_id;
+	public void setJoin_birth_date(String join_birth_date) {
+		this.join_birth_date = join_birth_date;
 	}
-	public String getTe_name() {
-		return te_name;
+	public String getJoin_gender() {
+		return join_gender;
 	}
-	public void setTe_name(String te_name) {
-		this.te_name = te_name;
+	public void setJoin_gender(String join_gender) {
+		this.join_gender = join_gender;
 	}
-	public String getTe_content() {
-		return te_content;
+	public String getJoin_school_name() {
+		return join_school_name;
 	}
-	public void setTe_content(String te_content) {
-		this.te_content = te_content;
+	public void setJoin_school_name(String join_school_name) {
+		this.join_school_name = join_school_name;
 	}
-	public String getInsert_date() {
-		return insert_date;
+	public String getJoin_major_name() {
+		return join_major_name;
 	}
-	public void setInsert_date(String insert_date) {
-		this.insert_date = insert_date;
+	public void setJoin_major_name(String join_major_name) {
+		this.join_major_name = join_major_name;
 	}
-	public String getModify_date() {
-		return modify_date;
+	public String getJoin_insert_date() {
+		return join_insert_date;
 	}
-	public void setModify_date(String modify_date) {
-		this.modify_date = modify_date;
+	public void setJoin_insert_date(String join_insert_date) {
+		this.join_insert_date = join_insert_date;
 	}
-	
+	public String getJoin_modify_date() {
+		return join_modify_date;
+	}
+	public void setJoin_modify_date(String join_modify_date) {
+		this.join_modify_date = join_modify_date;
+	}
 	
 }

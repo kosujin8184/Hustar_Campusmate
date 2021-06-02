@@ -36,49 +36,8 @@ public class TestController {
 	@Resource(name="propertiesService")
 	EgovPropertyService propertiesService;
 	
-	@RequestMapping(value = {"/selectTestList.do", "/selectTest2List.do"})
-	public String selectTestList(
-			@ModelAttribute("searchVO") TestVO searchVO,
-			HttpServletRequest req,
-			HttpServletResponse res,
-			ModelMap model
-			) throws Exception {
-		
-			//전체 count
-			int totCnt = commonService.selectListTotCnt(searchVO, req, res, "testDAO.selectTestListTotCnt");
-			//한페이지 row수
-			searchVO.setPageUnit(propertiesService.getInt("pageUnit"));
-			//page 노출 갯수
-			searchVO.setPageSize(propertiesService.getInt("pageSize"));
-			
-			//페이징 선언
-			ImagePaginationInfo paginationInfo = new ImagePaginationInfo();
-			paginationInfo.setCurrentPageNo(searchVO.getPageIndex());
-			paginationInfo.setRecordCountPerPage(searchVO.getPageUnit());
-			paginationInfo.setPageSize(searchVO.getPageSize());
-			paginationInfo.setTotalRecordCount(totCnt);
-			
-			//select 할때 필요한 limit 값 세팅
-			searchVO.setFirstIndex(paginationInfo.getFirstRecordIndex());
-			searchVO.setRecordCountPerPage(paginationInfo.getRecordCountPerPage());
-			
-			
-		
-			//List<TestVO> resultList = (List<TestVO>)testService.selectList(searchVO, req, res);
-			List<TestVO> resultList = (List<TestVO>)commonService.selectList(searchVO, req, res, "testDAO.selectTestList");
-			List<TestVO> noticeList = (List<TestVO>)commonService.selectList(searchVO, req, res, "testDAO.selectTestNoticeList");
-			
-			log.debug("te_is_hot :: " + searchVO.getTe_is_hot());
-			
-			model.addAttribute("resultList", resultList);
-			model.addAttribute("noticeList", noticeList);
-			model.addAttribute("paginationInfo", paginationInfo.getPagingHtml("fn_paging"));
-			model.addAttribute("totCnt", totCnt);
-			
-			
-			
-		return "test/selectTestList";
-	}
+	
+	
 	
 	@RequestMapping(value = {"/selectTestView.do"})
 	public String selectTestView(
@@ -96,7 +55,7 @@ public class TestController {
 		return "test/selectTestView";
 	}
 	
-	@RequestMapping(value = {"/insertTest{path1}.do"})
+	@RequestMapping(value = {"/join.do"})
 	public String insertTestForm(
 			@PathVariable("path1") String path1,
 			@ModelAttribute("searchVO") TestVO searchVO,
@@ -107,21 +66,21 @@ public class TestController {
 		
 			if("Form".equals(path1)) {
 				//insertTestForm.do 호출(등록페이지)
-				log.debug("등록페이지호출 :: insertTestForm.do");
+				log.debug("등록페이지호출 :: join.do");
 				
-				model.addAttribute("actionUrl", "insertTest.do");
+				model.addAttribute("actionUrl", "join.do");
 				return "test/insertTestForm";
 				
 			}else if(path1 == null || "".equals(path1)) {
 				//insertTest.do 호출(등록처리페이지)
-				log.debug("등록처리페이지호출 :: insertTest.do");
-				log.debug("te_name :: " + searchVO.getTe_name());
-				log.debug("te_content :: " + searchVO.getTe_content());
+				log.debug("등록처리페이지호출 :: join.do");
+				log.debug("join_school_num :: " + searchVO.getJoin_school_num());
+				
 				
 				try {
 					//데이터 저장(insert)
 					//String te_id = testService.insert(searchVO, req, res);
-					String te_id = commonService.insert(searchVO, req, res, "testDAO.insertTest");
+					String join_school_num = commonService.insert(searchVO, req, res, "testDAO.insertTest");
 					
 					model.addAttribute("resultMsg", "저장되었습니다.");
 					model.addAttribute("returnUrl", "/test/selectTestList.do");
@@ -139,113 +98,9 @@ public class TestController {
 	
 	
 	
-	@RequestMapping(value = {"/updateTest{path1}.do"})
-	public String updateTestForm(
-			@PathVariable("path1") String path1,
-			@ModelAttribute("searchVO") TestVO searchVO,
-			HttpServletRequest req,
-			HttpServletResponse res,
-			ModelMap model
-			) throws Exception {
-		
-			if("Form".equals(path1)) {
-				//updateTestForm.do 호출(등록페이지)
-				log.debug("수정페이지호출 :: updateTestForm.do");
-				
-				//key값 데이터 가져오기
-				TestVO resultVO = (TestVO)testService.selectView(searchVO, req, res);
-				model.addAttribute("resultVO", resultVO);
-				
-				model.addAttribute("actionUrl", "updateTest.do");
-				return "test/insertTestForm";
-				
-			}else if(path1 == null || "".equals(path1)) {
-				//updateTest.do 호출(등록처리페이지)
-				log.debug("등록처리페이지호출 :: updateTest.do");
-				log.debug("te_name :: " + searchVO.getTe_name());
-				log.debug("te_content :: " + searchVO.getTe_content());
-				
-				try {
-					//데이터 저장(update)
-					//testService.update(searchVO, req, res);
-					commonService.update(searchVO, req, res, "testDAO.updateTest");
-					
-					model.addAttribute("resultMsg", "수정되었습니다.");
-					model.addAttribute("returnUrl", "/test/selectTestList.do");
-				}catch(Exception e) {
-					e.printStackTrace();
-					model.addAttribute("resultMsg", "수정에 실패하였습니다.");
-				}
-				
-				
-				//return "redirect:/test/selectTestList.do";
-			}
-
-			return "common/alert";
-		
-			
-		
-	}
 	
-	@RequestMapping(value = {"/deleteTest.do"})
-	public String deleteTest(
-			@ModelAttribute("searchVO") TestVO searchVO,
-			HttpServletRequest req,
-			HttpServletResponse res,
-			ModelMap model
-			) throws Exception {
-		
-			//deleteTest.do 호출(삭제처리페이지)
-			log.debug("삭제처리페이지호출 :: deleteTest.do");
-			log.debug("te_id :: " + searchVO.getTe_id());
-			
-			try {
-				//데이터 삭제(delete)
-				//testService.delete(searchVO, req, res);
-				commonService.delete(searchVO, req, res, "testDAO.deleteTest");
-				
-				model.addAttribute("resultMsg", "삭제되었습니다.");
-				model.addAttribute("returnUrl", "/test/selectTestList.do");
-			}catch(Exception e) {
-				e.printStackTrace();
-				model.addAttribute("resultMsg", "삭제에 실패하였습니다.");
-			}
-
-			return "common/alert";
-	}
 	
-	@RequestMapping(value = {"/deleteTestAll.do"})
-	public String deleteTestAll(
-			@ModelAttribute("searchVO") TestVO searchVO,
-			HttpServletRequest req,
-			HttpServletResponse res,
-			ModelMap model
-			) throws Exception {
-		
-			//deleteTest.do 호출(삭제처리페이지)
-			log.debug("선택삭제처리페이지호출 :: deleteTestAll.do");
-
-			log.debug("test :: " + req.getParameter("te_ids"));
-
-			
-			
-			try {
-				//데이터 삭제(delete)
-				if(searchVO.getTe_ids() != null) {
-					for(int i = 0; i < searchVO.getTe_ids().length; i++) {
-						//log.debug("te_id ::: " + searchVO.getTe_ids()[i]);
-						searchVO.setTe_id(searchVO.getTe_ids()[i]);
-						commonService.delete(searchVO, req, res, "testDAO.deleteTest");
-					}
-				}
-				
-				model.addAttribute("resultMsg", "선택된 데이터가 삭제되었습니다.");
-				model.addAttribute("returnUrl", "/test/selectTestList.do");
-			}catch(Exception e) {
-				e.printStackTrace();
-				model.addAttribute("resultMsg", "삭제에 실패하였습니다.");
-			}
-
-			return "common/alert";
-	}
+	
+	
+	
 }

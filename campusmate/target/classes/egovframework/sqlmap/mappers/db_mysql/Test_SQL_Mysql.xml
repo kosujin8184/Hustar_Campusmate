@@ -99,13 +99,16 @@
 	<!-- 등록 -->
 	<insert id="testDAO.insertTest" parameterType="testVO" useGeneratedKeys="true">
 		<![CDATA[
-			INSERT INTO T_TEST SET
-			TE_NAME = #{te_name},
-			TE_NICK = #{te_nick},
-			TE_CONTENT = #{te_content},
-			TE_IS_NOTICE = #{te_is_notice},
-			TE_IS_HOT = #{te_is_hot},
-			INSERT_DATE = NOW()
+			INSERT INTO CM_JOIN SET
+			JOIN_SCHOOL_NUM = #{join_school_num},
+			JOIN_PASSWORD = #{join_password},
+			JOIN_NAME = #{join_name},
+			JOIN_PHONE = #{join_phone},
+			JOIN_BIRTH_DATE = #{join_birth_date},
+			JOIN_GENDER = #{join_gender},
+			JOIN_SCHOOL_NAME = #{join_school_name},
+			JOIN_MAJOR_NAME = #{join_major_name},
+			JOIN_INSERT_DATE = NOW()
 		]]>
 	</insert>
 	<!--  //등록 -->

@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>캠퍼스 데이트 | 회원가입</title>
 <link type="text/css" rel="stylesheet" href="<c:url value='../css/style.css'/>"/>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 
 
@@ -46,6 +47,7 @@
 
 
 <!-- contents 시작 -->
+<form method="post" id="submitForm" name="submitForm" onsubmit="return fn_submit();" action="${actionUrl}">
 <div class="join-box">
 	
 	<h1>회원가입</h1>
@@ -54,49 +56,49 @@
 		<ul>
 			<li>
 				<label for="">학번</label>
-				<input type="text" placeholder="학번">
+				<input type="text" placeholder="학번" id="join_school_num" name="join_school_num" value="${resultVO.join_school_num }" />
 			</li>
 			<li>
 				<label for="">비밀번호</label>
-				<input type="password" placeholder="비밀번호">
+				<input type="password" placeholder="비밀번호" id="join_password" name="join_password" value="${resultVO.join_password }" />
 			</li>
 			<li>
 				<label for="">비밀번호 확인</label>
-				<input type="password" placeholder="비밀번호 확인">
+				<input type="password" placeholder="비밀번호 확인" id="join_password" name="join_password" value="${resultVO.join_password }" />
 			</li>
 			<li>
 				<label for="">이름</label>
-				<input type="text" placeholder="이름">
+				<input type="text" placeholder="이름" id="join_name" name="join_name" value="${resultVO.join_name }" />
 			</li>
 			<li>
 				<label for="">연락처</label>
-				<input type="text" placeholder="연락처">
+				<input type="text" placeholder="연락처" id="join_phone" name="join_phone" value="${resultVO.join_phone }" />
 			</li>
 			<li>
 				<label for="">생년월일</label>
-				<input type="text" placeholder="생년월일">
+				<input type="text" placeholder="생년월일" id="join_birth_date" name="join_birth_date" value="${resultVO.join_birth_date }" />
 			</li>
 			<li class="gender">
 				<label for="">성별</label>
 				<span>
 					<label for="">남</label>
-					<input type="radio">
+					<input type="radio" id="join_gender" name="join_gender" value="${resultVO.join_gender }" />
 				</span>
 				<span>
 					<label for="">여</label>
-					<input type="radio">
+					<input type="radio" id="join_gender" name="join_gender" value="${resultVO.join_gender }" />
 				</span>
 			</li>
 			<li>
 				<label for="">학교</label>
-				<select name="" id="">
+				<select id="join_school_name" name="join_school_name" value="${resultVO.join_school_name }" />
 					<option value="">경북대학교</option>
 					<option value="">영남대학교</option>
 					<option value="">계명대학교</option>
 				</select>
 				
 				<label for="">학과</label>
-				<select name="" id="">
+				<select id="join_major_name" name="join_major_name" value="${resultVO.join_major_name }" />
 					<option value="">기계공학과</option>
 					<option value="">정보통신공학과</option>
 					<option value="">컴퓨터공학과</option>
@@ -121,11 +123,12 @@
 	</div>
 
 	<div class="join-btn">
-		<a href="#none">이전</a>	
+		<a href="#none" onclick="history.back();return false;">이전</a>	
 		<a href="#none">가입완료</a>
 	</div>
 
 </div>
+</form>
 <!-- contents 끝 -->
 
 
@@ -138,7 +141,7 @@
 		<h1>Light</h1>
 		<p>휴스타 3기 </p>
 		<p>개발자 : 고수진 김도연 정예성</p>
-		<p>github : https://github.com/YS-Jeong/Campusmate.git</p>
+		<p>github : https://github.com/kosujin8184/Hustar_Campusmate</p>
 		<span>copyright(c) Light. All rights reserved.</span>
 
 	</div>

@@ -5,10 +5,12 @@
     
     <typeAliases>
     	<typeAlias alias="testVO" type="egovframework.com.test.service.TestVO" />
+    	<typeAlias alias="menuVO" type="hustar.campusmate.menu.service.MenuVO" />
     </typeAliases>
 
 	<mappers>
        <mapper resource="egovframework/sqlmap/mappers/db_mysql/Test_SQL_Mysql.xml" />
+       <mapper resource="egovframework/sqlmap/mappers/db_mysql/CM_SQL_Mysql.xml" />
     </mappers> 
 
 </configuration>
